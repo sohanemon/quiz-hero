@@ -5,6 +5,8 @@ import Main from "./components/Layouts/main";
 import { Topics } from "./components/topics";
 const QuizPage = lazy(() => import("./components/quiz-page"));
 const NotFound = lazy(() => import("./components/not-found"));
+const Statistics = lazy(() => import("./components/statistics"));
+const Blogs = lazy(() => import("./components/blogs"));
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +34,24 @@ export const router = createBrowserRouter([
         element: (
           <Suspense>
             <Topics />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/statistics",
+        element: (
+          <Suspense>
+            <Statistics />
+          </Suspense>
+        ),
+        loader: async ({ params }) =>
+          fetch("https://openapi.programming-hero.com/api/quiz"),
+      },
+      {
+        path: "/blogs",
+        element: (
+          <Suspense>
+            <Blogs />
           </Suspense>
         ),
       },

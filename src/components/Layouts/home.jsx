@@ -3,7 +3,7 @@ import { Topics } from "../topics";
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='snap-y snap-mandatory'>
       <Header />
       <Topics />
     </div>

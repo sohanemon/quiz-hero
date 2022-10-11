@@ -9,12 +9,12 @@ const Navbar = () => {
       <div className='relative flex items-center justify-between'>
         <Link
           to={"/"}
-          ariaLabel='Company'
-          title='Company'
+          aria-label='Quiz Hero'
+          title='Quiz Hero'
           className='inline-flex items-center'
         >
           <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-            Company
+            Quiz <span className='text-orange-500'>Hero</span>
           </span>
         </Link>
         <ul className='items-center hidden space-x-8 lg:flex'>
@@ -22,10 +22,14 @@ const Navbar = () => {
             <li key={el}>
               <Link
                 to={el === "home" ? "" : el}
-                ariaLabel='Our product'
+                aria-label='Our product'
                 title='Our product'
-                className={`font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 capitalize ${
-                  pathname.includes(el) ? "underline" : ""
+                className={`font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400 capitalize cursor-pointer ${
+                  pathname === "/" && el === "home"
+                    ? "underline text-orange-500 "
+                    : pathname.includes(el)
+                    ? "underline text-orange-500 "
+                    : "text-gray-700"
                 }`}
               >
                 {el}
@@ -36,7 +40,7 @@ const Navbar = () => {
 
         <div className='lg:hidden'>
           <button
-            ariaLabel='Open Menu'
+            aria-label='Open Menu'
             title='Open Menu'
             className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
             onClick={() => setIsMenuOpen(true)}
@@ -57,39 +61,24 @@ const Navbar = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className='absolute top-0 left-0 w-full'>
+            <div className='absolute top-0 left-0 w-full z-50'>
               <div className='p-5 bg-white border rounded shadow-sm'>
                 <div className='flex items-center justify-between mb-4'>
                   <div>
                     <Link
                       to={"/"}
-                      ariaLabel='Company'
-                      title='Company'
+                      aria-label='Quiz Hero'
+                      title='Quiz Hero'
                       className='inline-flex items-center'
                     >
-                      <svg
-                        className='w-8 text-deep-purple-accent-400'
-                        viewBox='0 0 24 24'
-                        strokeLinejoin='round'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                        strokeMiterlimit='10'
-                        stroke='currentColor'
-                        fill='none'
-                      >
-                        <rect x='3' y='1' width='7' height='12' />
-                        <rect x='3' y='17' width='7' height='6' />
-                        <rect x='14' y='1' width='7' height='6' />
-                        <rect x='14' y='11' width='7' height='12' />
-                      </svg>
                       <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                        Company
+                        Quiz <span className='text-orange-500'>Hero</span>
                       </span>
                     </Link>
                   </div>
                   <div>
                     <button
-                      ariaLabel='Close Menu'
+                      aria-label='Close Menu'
                       title='Close Menu'
                       className='p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline'
                       onClick={() => setIsMenuOpen(false)}
@@ -109,7 +98,7 @@ const Navbar = () => {
                       <li key={el}>
                         <Link
                           to={el === "home" ? "" : el}
-                          ariaLabel='Our product'
+                          aria-label='Our product'
                           title='Our product'
                           className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 capitalize'
                         >

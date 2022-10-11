@@ -57,7 +57,7 @@ export const Topics = () => {
 function Card({ id, name, logo, total }) {
   return (
     <Link
-      to={`quiz/${id}`}
+      to={`/quiz/${id}`}
       aria-label='View Item'
       className='inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2'
     >

@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./components/Layouts/home";
 import Main from "./components/Layouts/main";
+import { Topics } from "./components/topics";
 const QuizPage = lazy(() => import("./components/quiz-page"));
 const NotFound = lazy(() => import("./components/not-found"));
 
@@ -26,8 +27,17 @@ export const router = createBrowserRouter([
             `https://openapi.programming-hero.com/api/quiz/${params.topicId}`
           ),
       },
+      {
+        path: "/topics",
+        element: (
+          <Suspense>
+            <Topics />
+          </Suspense>
+        ),
+      },
     ],
   },
+
   {
     path: "*",
     element: (

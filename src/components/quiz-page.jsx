@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const QuizPage = () => {
   const data = useLoaderData();
@@ -10,7 +12,6 @@ const QuizPage = () => {
     answered: 0,
     correct: 0,
   });
-  console.log(data);
 
   return (
     <>
@@ -24,8 +25,9 @@ const QuizPage = () => {
           textAlign: "center",
         }}
         closeButton={false}
-        position='bottom-right'
+        position='top-center'
       />
+
       <section className='grid-cols-4 grid'>
         <div
           className={`${
@@ -133,6 +135,15 @@ const Questions = ({ question, options, correctAnswer, setSummary }) => {
   );
 };
 const Summary = ({ summary, total }) => {
+  const mySwal = withReactContent(Swal);
+  const mark = ((summary.correct / total) * 100).toFixed(0);
+  if (summary.answered === total) {
+    mySwal.fire(
+      mark > 32 ? (mark > 79 ? "A+" : "Pass") : "Fail",
+      `You got ${mark}% mark.`,
+      mark > 79 ? "success" : mark > 32 ? "question" : "error"
+    );
+  }
   return (
     <div className='sticky top-0 sm:h-screen text-xl p-6'>
       <p>Total question: {total}</p>

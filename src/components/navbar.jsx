@@ -13,8 +13,14 @@ const Navbar = () => {
           title='Quiz Hero'
           className='inline-flex items-center'
         >
+          {" "}
+          <img
+            className='w-10'
+            src='https://cdn-icons-png.flaticon.com/512/3261/3261308.png'
+            alt=''
+          />
           <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-            Quiz <span className='text-orange-500'>Hero</span>
+            Quiz <span className='text-yellow-500'>Hero</span>
           </span>
         </Link>
         <ul className='items-center hidden space-x-8 lg:flex'>
@@ -26,9 +32,9 @@ const Navbar = () => {
                 title='Our product'
                 className={`font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400 capitalize cursor-pointer ${
                   pathname === "/" && el === "home"
-                    ? "underline text-orange-500 "
+                    ? "underline text-yellow-500 "
                     : pathname.includes(el)
-                    ? "underline text-orange-500 "
+                    ? "underline text-yellow-500 "
                     : "text-gray-700"
                 }`}
               >
@@ -72,7 +78,7 @@ const Navbar = () => {
                       className='inline-flex items-center'
                     >
                       <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                        Quiz <span className='text-orange-500'>Hero</span>
+                        Quiz <span className='text-yellow-500'>Hero</span>
                       </span>
                     </Link>
                   </div>

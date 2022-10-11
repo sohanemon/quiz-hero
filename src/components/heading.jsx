@@ -25,7 +25,7 @@ export default function Heading({ coloredText, normalText, subText }) {
               height='24'
             />
           </svg>
-          <span className='relative text-orange-500'>{coloredText}</span>
+          <span className='relative text-yellow-500'>{coloredText}</span>
         </span>{" "}
         {normalText}
         <p className='text-sm text-gray-500 py-4 tracking-widest'>{subText}</p>

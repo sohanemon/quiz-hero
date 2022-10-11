@@ -25,7 +25,7 @@ const Header = () => {
               Educational Website
             </p>
             <h2 className='mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
-              Quiz <span className='inline-block text-orange-500'>Hero</span>
+              Quiz <span className='inline-block text-yellow-500'>Hero</span>
             </h2>
             <p className='pr-5 mb-5 text-base text-gray-700 md:text-lg'>
               Test yourself.
@@ -35,7 +35,7 @@ const Header = () => {
               <Link
                 to={"/blogs"}
                 aria-label=''
-                className='inline-flex items-center font-semibold text-orange-500 transition-colors duration-200 hover:text-deep-purple-accent-700'
+                className='inline-flex items-center font-semibold text-yellow-500 transition-colors duration-200 hover:text-deep-purple-accent-700'
               >
                 Learn more
               </Link>

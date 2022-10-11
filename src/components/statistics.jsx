@@ -33,7 +33,7 @@ const Statistics = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey='total' fill='coral' />
+            <Bar dataKey='total' fill='orange' />
           </BarChart>
         </ResponsiveContainer>
       </div>

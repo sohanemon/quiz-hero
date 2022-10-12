@@ -13,4 +13,4 @@
 - Recheck option built in disabled
 - Enable users to practice for subjective tests
 
-## Live Website [Link](https://quiz-hero.netlify.app)
+## Live Website [Link](https://quizhero1.netlify.app)
